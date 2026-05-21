@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滙凱實業有限公司 | 智慧景觀噴灌系統供應商</title>
+    <!-- SEO 優化 -->
+    <meta name="description" content="滙凱實業有限公司專營智慧景觀噴灌系統，引進 Yardian 智慧生態控制器，並代理全球權威品牌 Hunter、Rain Bird、Toro 噴頭與電磁閥，提供頂級別墅中庭、現代溫室與公共工程的精準節水控水規劃。">
+    <meta name="keywords" content="滙凱實業, 噴灌系統, Yardian, Hunter噴頭, Rain Bird, Toro, 自動澆灌, 景觀工程">
+    <!-- 引入 Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- 引入 Google 字體與 Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .overflow-hidden-v { overflow: hidden !important; }
+        
+        /* 呼吸感背景放大特效 */
+        @keyframes kenburns {
+            0% { transform: scale(1.02); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1.02); }
+        }
+        .animate-kenburns {
+            animation: kenburns 25s ease-in-out infinite;
+        }
+
+        /* 滾動漸現初始狀態 */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.21, 0.6, 0.35, 1), transform 0.6s cubic-bezier(0.21, 0.6, 0.35, 1);
+        }
+        /* 滾動漸現觸發狀態 */
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-emerald-600 selection:text-white">
+
+    <!-- 導覽列 Navigation -->
+    <nav id="navbar" class="bg-white/90 backdrop-blur-md sticky top-0 z-50 transition-all duration-300 border-b border-gray-100 py-1">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-14 sm:h-16 transition-all duration-300" id="nav-container">
+                <!-- Logo 區 -->
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-emerald-900 flex items-center gap-2 hover:opacity-90 transition">
+                        <span class="material-icons text-2xl text-emerald-600 transition-transform duration-500 hover:rotate-12">water_drop</span>
+                        <div class="flex flex-col leading-none">
+                            <span class="tracking-widest font-black text-lg sm:text-xl text-emerald-800">滙凱實業</span>
+                            <span class="text-[9px] text-gray-400 font-light mt-0.5 uppercase tracking-widest hidden sm:block">Smart Irrigation Systems</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 桌面端選單 -->
+                <div class="hidden lg:flex items-center space-x-6 font-medium text-sm">
+                    <a href="#" class="text-emerald-700 hover:text-emerald-600 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-emerald-600 after:scale-x-100">首頁</a>
+                    <a href="#categories" class="text-gray-600 hover:text-emerald-600 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-emerald-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">產品與技術</a>
+                    <a href="#brands" class="text-gray-600 hover:text-emerald-600 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-emerald-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">四大品牌</a>
+                    <a href="#solutions" class="text-gray-600 hover:text-emerald-600 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-emerald-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">工程應用</a>
+                    <a href="#contact" class="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5">詢價與聯絡</a>
+                </div>
+                
+                <!-- 行動版漢堡鈕 -->
+                <div class="flex items-center lg:hidden">
+                    <button id="menu-btn" class="p-2 rounded-lg text-gray-600 hover:text-emerald-600 hover:bg-gray-100 transition focus:outline-none" aria-label="Toggle Menu">
+                        <span id="menu-icon" class="material-icons text-2xl transition-transform duration-300">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 行動端下拉選單 -->
+        <div id="mobile-menu" class="hidden fixed inset-x-0 top-14 bottom-0 bg-white/98 backdrop-blur-lg z-40 border-t border-gray-100 px-6 py-6 space-y-3 shadow-xl overflow-y-auto lg:hidden">
+            <div class="flex flex-col space-y-1">
+                <a href="#" class="mobile-link block px-4 py-2.5 rounded-lg text-emerald-700 font-medium bg-emerald-50">首頁</a>
+                <a href="#categories" class="mobile-link block px-4 py-2.5 rounded-lg text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition">產品與技術</a>
+                <a href="#brands" class="mobile-link block px-4 py-2.5 rounded-lg text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition">四大頂級品牌</a>
+                <a href="#solutions" class="mobile-link block px-4 py-2.5 rounded-lg text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition">工程與應用</a>
+            </div>
+            <div class="pt-3 border-t border-gray-100">
+                <a href="#contact" class="mobile-link block text-center bg-emerald-600 text-white px-4 py-3 rounded-lg font-medium hover:bg-emerald-700 transition shadow-md">詢價與聯絡</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主視覺 Banner -->
+    <section class="relative bg-gradient-to-br from-emerald-950 via-teal-900 to-stone-900 text-white py-16 sm:py-24 px-4 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80" 
+                 onerror="this.src='https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1920&q=80'"
+                 alt="滙凱實業大自然永續控水視覺" 
+                 class="w-full h-full object-cover opacity-25 object-center scale-105 animate-kenburns">
+        </div>
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-flex items-center gap-1.5 bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-semibold px-3 py-1 rounded-full tracking-wider uppercase transition-all duration-700">
+                滙凱實業有限公司 ╳ 智慧綠化與智慧噴灌
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-bold mt-4 mb-4 leading-tight tracking-tight text-white transition-all duration-700 delay-200">
+                智慧生態控水，精準澆灌景觀
+            </h1>
+            <p class="text-sm sm:text-base text-emerald-100 max-w-3xl mx-auto mb-8 leading-relaxed font-light transition-all duration-700 delay-300">
+                我們引進台灣頂尖研發的 <span class="text-emerald-300 font-medium">Yardian 智慧生態控制器</span>，協同全球噴灌權威品牌 <span class="text-emerald-300 font-medium">Hunter、Rain Bird、Toro</span> 硬體設備，為居家別墅、建案中庭及公共工程打造具備極致省水效益、水力學精算的水務管控網。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-3 transition-all duration-700 delay-400">
+                <a href="#categories" class="w-full sm:w-auto text-center bg-emerald-600 text-white font-medium px-6 py-3 rounded-xl hover:bg-emerald-500 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg text-sm sm:text-base">
+                    瀏覽核心產品與技術
+                </a>
+                <a href="#contact" class="w-full sm:w-auto text-center bg-white/10 text-white border border-white/20 font-medium px-6 py-3 rounded-xl hover:bg-white/20 transition-all duration-300 text-sm sm:text-base backdrop-blur-sm transform hover:-translate-y-0.5">
+                    聯絡滙凱工程師團隊
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 四大品牌合作商 -->
+    <section id="brands" class="py-12 bg-white border-b border-gray-100 scroll-reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-bold tracking-widest text-emerald-800 uppercase mb-10">
+                滙凱精選：全球四大頂級噴灌品牌硬體系統
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 items-start justify-items-center">
+                
+                <!-- 品牌 1: YARDIAN -->
+                <div class="flex flex-col items-center text-center group cursor-default w-full px-2">
+                    <div class="h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
+                        <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=120&h=60&q=80" 
+                             onerror="this.src='https://placehold.co/120x60/f0fdf4/047857?text=YARDIAN'"
+                             alt="Yardian 官方商標" class="max-h-12 w-auto object-contain mix-blend-multiply rounded opacity-90">
+                    </div>
+                    <div class="font-black text-lg sm:text-xl text-gray-900 tracking-wider group-hover:text-emerald-700 transition-colors duration-300">
+                        YARDIAN
+                    </div>
+                    <span class="text-xs sm:text-sm block text-emerald-600 font-semibold mt-1.5 bg-emerald-50 px-2 py-0.5 rounded-md">
+                        智慧物聯網大腦
+                    </span>
+                </div>
+
+                <!-- 品牌 2: HUNTER -->
+                <div class="flex flex-col items-center text-center group cursor-default w-full px-2">
+                    <div class="h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=60&q=80" 
+                             onerror="this.src='https://placehold.co/120x60/f0fdf4/047857?text=HUNTER'"
+                             alt="Hunter 官方商標" class="max-h-12 w-auto object-contain mix-blend-multiply rounded opacity-90">
+                    </div>
+                    <div class="font-black text-lg sm:text-xl text-gray-900 tracking-wider group-hover:text-emerald-700 transition-colors duration-300">
+                        HUNTER
+                    </div>
+                    <span class="text-xs sm:text-sm block text-emerald-600 font-semibold mt-1.5 bg-emerald-50 px-2 py-0.5 rounded-md">
+                        北美地動噴頭權威
+                    </span>
+                </div>
+
+                <!-- 品牌 3: RAIN BIRD -->
+                <div class="flex flex-col items-center text-center group cursor-default w-full px-2">
+                    <div class="h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
+                        <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=120&h=60&q=80" 
+                             onerror="this.src='https://placehold.co/120x60/f0fdf4/047857?text=RAIN+BIRD'"
+                             alt="Rain Bird 官方商標" class="max-h-12 w-auto object-contain mix-blend-multiply rounded opacity-90">
+                    </div>
+                    <div class="font-black text-lg sm:text-xl text-gray-900 tracking-wider group-hover:text-emerald-700 transition-colors duration-300">
+                        RAIN BIRD
+                    </div>
+                    <span class="text-xs sm:text-sm block text-emerald-600 font-semibold mt-1.5 bg-emerald-50 px-2 py-0.5 rounded-md">
+                        高規節水電磁閥
+                    </span>
+                </div>
+
+                <!-- 品牌 4: TORO -->
+                <div class="flex flex-col items-center text-center group cursor-default w-full px-2">
+                    <div class="h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
+                        <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0bc?auto=format&fit=crop&w=120&h=60&q=80" 
+                             onerror="this.src='https://placehold.co/120x60/f0fdf4/047857?text=TORO'"
+                             alt="Toro 官方商標" class="max-h-12 w-auto object-contain mix-blend-multiply rounded opacity-90">
+                    </div>
+                    <div class="font-black text-lg sm:text-xl text-gray-900 tracking-wider group-hover:text-emerald-700 transition-colors duration-300">
+                        TORO
+                    </div>
+                    <span class="text-xs sm:text-sm block text-emerald-600 font-semibold mt-1.5 bg-emerald-50 px-2 py-0.5 rounded-md">
+                        高階球場與耐壓設備
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 跑馬燈數據區 -->
+    <section class="py-10 bg-gradient-to-r from-emerald-800 to-teal-900 text-white scroll-reveal">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center" id="counter-section">
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-emerald-300 mb-0.5"><span class="counter-value" data-target="35">0</span>%</div>
+                    <div class="text-[11px] text-emerald-100 font-light tracking-wide">平均運作省水率</div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-emerald-300 mb-0.5"><span class="counter-value" data-target="500">0</span>+</div>
+                    <div class="text-[11px] text-emerald-100 font-light tracking-wide">規劃施作案場實績</div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-emerald-300 mb-0.5"><span class="counter-value" data-target="100">0</span>%</div>
+                    <div class="text-[11px] text-emerald-100 font-light tracking-wide">原廠正品零件供應</div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-emerald-300 mb-0.5"><span class="counter-value" data-target="24">0</span>/<span class="counter-value" data-target="7">0</span></div>
+                    <div class="text-[11px] text-emerald-100 font-light tracking-wide">雲端智慧控水監測</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心產品大類與 AutoCAD 技術支援 -->
+    <section id="categories" class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-reveal">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">滙凱核心產品與技術支援</h2>
+            <p class="text-gray-500 mt-2 font-light text-xs sm:text-sm max-w-xl mx-auto">完美串聯科技大腦、專業噴灌硬體與精準水力計算，提供業界最放心的整合方案</p>
+            <div class="w-10 h-0.5 bg-emerald-600 mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <!-- 3張同等規格卡片之三欄網格配置 -->
+        <div class="grid p-1 grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- 卡片 1: Yardian 智慧控制器 -->
+            <div class="group bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between">
+                <div>
+                    <div class="w-full h-44 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&w=600&q=80" 
+                             onerror="this.src='https://images.unsplash.com/photo-1525498128493-380d1990a112?auto=format&fit=crop&w=600&q=80'"
+                             alt="Yardian 智慧控制器大自然意境圖" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] px-2.5 py-0.5 rounded-full font-medium shadow">物聯網核心</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold mb-1.5 text-gray-900 group-hover:text-emerald-700 transition-colors duration-300">Yardian 智慧控制器</h3>
+                        <p class="text-gray-600 font-light text-xs sm:text-sm leading-relaxed">
+                            支援 Wi-Fi 與實體區域網路 RJ45 雙連線。能即時連動中央氣象局測站數據，落雨自動停噴。透過智慧手機 App，人在國外也能秒級操控案場出水。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 卡片 2: 隱藏式地動彈跳噴頭 -->
+            <div class="group bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between">
+                <div>
+                    <div class="w-full h-44 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&w=600&q=80" 
+                             onerror="this.src='https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&q=80'"
+                             alt="大自然草坪細密噴灌水霧" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] px-2.5 py-0.5 rounded-full font-medium shadow">Hunter / Rain Bird</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-base font-bold mb-1.5 text-gray-900 group-hover:text-emerald-700 transition-colors duration-300">隱藏式地動彈跳噴頭</h3>
+                        <p class="text-gray-600 font-light text-xs sm:text-sm leading-relaxed">
+                            不灌溉時完美隱蔽於草坪地表下，完全不影響割草機作業與行人步行安全。水壓驅動時精準彈出，具備出色的抗風性與扇形角度無級調節。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 卡片 3: 專業水力學計算技術支援 (已取消 LINE 按鈕，結構與其餘卡片一致) -->
+            <div class="group bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between">
+                <div>
+                    <div class="w-full h-44 relative overflow-hidden bg-stone-900">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" 
+                             onerror="this.src='https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80'"
+                             alt="AutoCAD 水力學管網規劃工程圖" 
+                             class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition duration-500 object-center">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-black/40"></div>
+                        
+                        <div class="absolute inset-0 p-4 flex flex-col justify-between z-10 text-white">
+                            <div>
+                                <span class="inline-flex bg-teal-600 text-white text-[10px] px-2.5 py-0.5 rounded-full font-medium shadow items-center gap-1">
+                                    <span class="material-icons text-[11px] animate-pulse">architecture</span> CAD / 水力計算
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-white tracking-wide drop-shadow-md">專業水力計算技術支援</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 font-light text-xs sm:text-sm leading-relaxed">
+                            滙凱實業不只供應頂級設備，更擁有專業的水力計算能力。我們能依據案場的**動態水壓**與**流量需求（GPM / LPM）**，為工程商夥伴提供精準的噴灌管網規劃。經由嚴格的壓降與流速控制，確保每支噴頭完美發揮原廠效能。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 工程應用實績 -->
+    <section id="solutions" class="bg-gray-100/80 py-14 sm:py-20 scroll-reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">滙凱實業的多領域實績應用</h2>
+                <div class="w-10 h-0.5 bg-emerald-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- 應用 1 -->
+                <div class="group bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                    <div>
+                        <div class="w-full h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'"
+                                 alt="完美融入自然美學的景觀建築噴灌" class="w-full h-full object-cover group-hover:scale-103 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-0.5">Residential & Estate</div>
+                            <h3 class="text-lg font-bold mb-2 text-gray-900 group-hover:text-emerald-700 transition-colors duration-300">頂級豪宅別墅 ╳ 商業中庭噴灌</h3>
+                            <p class="text-gray-600 font-light text-xs sm:text-sm leading-relaxed">
+                                為精緻私人庭園、大型接待中心、科技園區及住宅中庭量身建置。導入 Yardian 天氣智能休眠機制，讓業主在出差或雨季時，依然能交由雲端進行完美的水平衡養護。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 應用 2 -->
+                <div class="group bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                    <div>
+                        <div class="w-full h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80'"
+                                 alt="大型現代光照溫室與垂直綠化生態工程" class="w-full h-full object-cover group-hover:scale-103 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-0.5">Agriculture & Infrastructure</div>
+                            <h3 class="text-lg font-bold mb-2 text-gray-900 group-hover:text-emerald-700 transition-colors duration-300">現代溫室網室 ╳ 屋頂立體綠化</h3>
+                            <p class="text-gray-600 font-light text-xs sm:text-sm leading-relaxed">
+                                用于精密植物工廠與高密度景觀垂直綠牆。配合智慧型雲端控制器進行精確的水分與時間調配，使最末端噴灌區域出水完全一致，有效控濕。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡資訊與線上詢價區 -->
+    <section id="contact" class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-reveal">
+        <div class="grid lg:grid-cols-3 bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            
+            <!-- 滙凱實業官方聯絡資訊區 -->
+            <div class="bg-white text-gray-800 flex flex-col justify-between overflow-hidden border-r border-gray-100">
+                <div class="w-full h-44 sm:h-48 relative overflow-hidden shrink-0">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80" 
+                         onerror="this.src='https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=800&q=80'"
+                         alt="滙凱實業精準噴灌生態視覺" 
+                         class="w-full h-full object-cover brightness-95">
+                </div>
+
+                <div class="p-6 sm:p-8 flex-grow space-y-5">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 tracking-tight flex items-center gap-2 text-emerald-900">
+                            <span class="w-1.5 h-5 bg-emerald-600 rounded-full"></span>聯絡滙凱實業
+                        </h3>
+                        <p class="text-gray-600 font-light text-xs leading-relaxed">
+                            不論您是工程行夥伴、景觀設計師、水電承裝商或是專案業主，不論是設備零售或是整場專案智慧控制系統規劃，滙凱實業均能為您提供最到位的規格說明與報價。
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4 text-xs sm:text-sm border-t border-gray-200/80 pt-4">
+                        <div class="flex items-start gap-3">
+                            <span class="material-icons text-emerald-600 text-lg sm:text-xl shrink-0 mt-0.5">business</span>
+                            <div>
+                                <strong class="block text-gray-900 font-bold tracking-wide text-sm sm:text-base">滙凱實業有限公司</strong>
+                                <span class="text-gray-400 text-[10px] font-medium block tracking-wider uppercase">HONY KON INTERNATIONAL CO., LTD.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-icons text-emerald-600 text-lg sm:text-xl shrink-0 mt-0.5">location_on</span>
+                            <div>
+                                <span class="text-gray-400 font-semibold block text-[10px]">公司地址</span>
+                                <span class="text-gray-800 font-medium block mt-0.5 text-xs sm:text-sm">台北市大安區忠孝東路四段162號4樓409室</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-icons text-emerald-600 text-lg sm:text-xl shrink-0 mt-0.5">phone</span>
+                            <div>
+                                <span class="text-gray-400 font-semibold block text-[10px]">服務熱線</span>
+                                <a href="tel:+886-2-27760766" class="text-emerald-700 font-bold hover:text-emerald-600 transition-colors block mt-0.5 text-sm sm:text-base">+886-2-2776-0766</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-icons text-emerald-600 text-lg sm:text-xl shrink-0 mt-0.5">print</span>
+                            <div>
+                                <span class="text-gray-400 font-semibold block text-[10px]">傳真號碼</span>
+                                <span class="text-gray-800 font-medium block mt-0.5 text-xs sm:text-sm">+886-2-2741-5731</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-icons text-emerald-600 text-lg sm:text-xl shrink-0 mt-0.5">chat</span>
+                            <div>
+                                <span class="text-gray-400 font-semibold block text-[10px]">官方 LINE ID</span>
+                                <span class="text-gray-800 font-bold block mt-0.5 text-xs sm:text-sm select-all">honykon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 pt-0 shrink-0">
+                    <p class="text-[10px] text-gray-400 mb-1.5 font-semibold tracking-wide">專員電子郵件詢價</p>
+                    <a href="mailto:sales.honykon@msa.hinet.net" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 text-center shadow-sm hover:shadow-md text-xs sm:text-sm">
+                        <span class="material-icons text-lg">email</span> sales.honykon@msa.hinet.net
+                    </a>
+                </div>
+            </div>
+
+            <!-- 右側：需求提報表單 -->
+            <div class="lg:col-span-2 p-6 sm:p-10">
+                <h3 class="text-xl font-bold text-gray-900 mb-1 tracking-tight">規格詢價與專案需求提報</h3>
+                <p class="text-gray-500 font-light text-xs sm:text-sm mb-6">請留下您的聯絡方式，若有特定型號（如 Hunter PGP、Yardian）請一併填入備註。</p>
+                
+                <form id="huikaiForm" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">公司或業主姓名 *</label>
+                            <input type="text" name="client_name" required class="w-full px-3 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all text-xs sm:text-sm bg-gray-50/50 focus:bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">聯絡電話 / 手機 *</label>
+                            <input type="tel" name="client_phone" required class="w-full px-3 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all text-xs sm:text-sm bg-gray-50/50 focus:bg-white">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">感興趣的設備與服務 (可複選) *</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
+                            <label class="flex items-center gap-2 border border-gray-200 p-2.5 rounded-xl cursor-pointer hover:bg-gray-50 hover:border-emerald-300 transition-all select-none">
+                                <input type="checkbox" name="interest" value="yardian" class="w-3.5 h-3.5 accent-emerald-600 rounded"> Yardian 智慧網路控制器
+                            </label>
+                            <label class="flex items-center gap-2 border border-gray-200 p-2.5 rounded-xl cursor-pointer hover:bg-gray-50 hover:border-emerald-300 transition-all select-none">
+                                <input type="checkbox" name="interest" value="hunter" class="w-3.5 h-3.5 accent-emerald-600 rounded"> Hunter 噴頭與硬體設備
+                            </label>
+                            <label class="flex items-center gap-2 border border-gray-200 p-2.5 rounded-xl cursor-pointer hover:bg-gray-50 hover:border-emerald-300 transition-all select-none">
+                                <input type="checkbox" name="interest" value="rainbird" class="w-3.5 h-3.5 accent-emerald-600 rounded"> Rain Bird 電磁閥系列
+                            </label>
+                            <label class="flex items-center gap-2 border border-gray-200 p-2.5 rounded-xl cursor-pointer hover:bg-gray-50 hover:border-emerald-300 transition-all select-none">
+                                <input type="checkbox" name="interest" value="cad" class="w-3.5 h-3.5 accent-emerald-600 rounded"> AutoCAD 管網規劃與水力計算
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">電子郵件信箱</label>
+                        <input type="email" name="client_email" class="w-full px-3 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all text-xs sm:text-sm bg-gray-50/50 focus:bg-white">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">需求備註 / 詢價型號清單</label>
+                        <textarea name="client_message" rows="4" placeholder="請輸入您需要詢價的噴頭型號、數量，或是案場坪數等基本資訊..." class="w-full px-3 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all text-xs sm:text-sm bg-gray-50/50 focus:bg-white resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 rounded-xl transition-all duration-300 shadow hover:shadow-lg text-xs sm:text-sm">
+                        送出詢價需求
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-8 border-t border-stone-800 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="text-stone-300">© 2026 滙凱實業有限公司 HONY KON INTERNATIONAL CO., LTD. 版權所有</p>
+            <p>本網頁所提及之全球品牌商標權均屬原註冊公司所有。智慧控水系統規劃商。</p>
+        </div>
+    </footer>
+
+    <!-- 互動 JavaScript 邏輯 -->
+    <script>
+        // 1. 行動端導覽列開關邏輯
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden-v');
+            menuIcon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('hidden')) toggleMenu();
+        }));
+
+        // 2. 滾動漸現動畫（Scroll Reveal）
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 3. 數據跑馬燈動畫增加動態感
+        const counterSection = document.getElementById('counter-section');
+        const counters = document.querySelectorAll('.counter-value');
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 1500; // 毫秒
+                    const step = target / (duration / 16);
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += step;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+                    updateCounter();
+                });
+                counterObserver.unobserve(counterSection);
+            }
+        }, { threshold: 0.3 });
+
+        if (counterSection) counterObserver.observe(counterSection);
+
+        // 4. 表單提交模擬與防呆
+        document.getElementById('huikaiForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 檢查複選框是否有勾選
+            const checkboxes = document.querySelectorAll('input[name="interest"]:checked');
+            if (checkboxes.length === 0) {
+                alert('請至少勾選一項您感興趣的設備或服務，謝謝！');
+                return;
+            }
+
+            alert('感謝您的提報！滙凱實業精準水力小組將於 24 小時內安排專員與您取得聯繫。');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
