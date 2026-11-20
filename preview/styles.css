@@ -92,3 +92,13 @@
 .portfolio-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;transform:none!important}
 .portfolio-image:not(.is-ready) img:first-child,.portfolio-image img.is-active{opacity:1}
 @media(prefers-reduced-motion:reduce){.portfolio-image img{transition:none}}
+
+
+/* Mobile catalogue: category tabs stay in one horizontally scrollable row */
+@media(max-width:700px){
+ .catalog-toolbar{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:7px;margin:0 -18px 16px;padding:0 18px 8px;scrollbar-width:thin;-webkit-overflow-scrolling:touch;}
+ .catalog-toolbar .filter-btn{flex:0 0 auto;white-space:nowrap;padding:10px 13px;font-size:12px;}
+ .catalog-toolbar .filter-btn[data-filter="all"]{display:none;}
+ .catalog-status{margin:-5px 0 14px;}
+ .catalog-group-title[hidden],.catalog-card[hidden]{display:none!important;}
+}
