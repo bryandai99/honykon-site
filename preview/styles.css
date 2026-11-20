@@ -41,3 +41,10 @@
 @media(max-width:900px){.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.catalog-grid{grid-template-columns:1fr 1fr;gap:12px}.catalog-top{height:115px;padding:14px}.catalog-top img{width:90px}.catalog-symbol{font-size:52px}.catalog-body{padding:15px}.catalog-body h3{font-size:15px}.catalog-body>p{font-size:11px;min-height:95px}.catalog-body dl div{grid-template-columns:1fr;gap:3px}.catalog-tags{align-items:flex-start;flex-direction:column}.portfolio-grid{grid-template-columns:1fr}.portfolio-image{height:230px}.portfolio-content{padding:21px}.portfolio-note{display:block}.portfolio-note b{display:block;margin-bottom:5px}}
 @media(max-width:390px){.catalog-grid{grid-template-columns:1fr}.catalog-body>p{min-height:0}.catalog-body dl div{grid-template-columns:76px 1fr}}
+
+/* Accessibility and interaction polish */
+.filter-btn:focus-visible,.menu:focus-visible,.btn:focus-visible,.catalog-body>a:focus-visible,.portfolio-content>a:focus-visible{outline:3px solid #9bbd72;outline-offset:3px}
+.catalog-status{font-size:10px;color:#7c8a7e;margin:-10px 0 18px;min-height:1.5em}
+.filter-btn{border-radius:2px}
+.contact input:focus-visible,.contact select:focus-visible,.contact textarea:focus-visible{outline:2px solid #789b60;outline-offset:1px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
