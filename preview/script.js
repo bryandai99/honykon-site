@@ -169,3 +169,17 @@ if(modal){
   if(event.key==='Escape'&&!modal.hidden)closeProductModal();
  });
 }
+
+
+/* Independent portfolio photo carousels: rotate each 3-photo group every 30 seconds */
+document.querySelectorAll('.portfolio-image[data-carousel]').forEach(gallery=>{
+ const slides=[...gallery.querySelectorAll('img')];
+ if(slides.length<2)return;
+ let current=0;
+ slides.forEach((slide,index)=>slide.classList.toggle('is-active',index===0));
+ window.setInterval(()=>{
+  slides[current].classList.remove('is-active');
+  current=(current+1)%slides.length;
+  slides[current].classList.add('is-active');
+ },30000);
+});
