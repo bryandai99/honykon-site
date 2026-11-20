@@ -18,7 +18,7 @@ const catalogCards=[...document.querySelectorAll('.catalog-card')];
 const catalogStatus=document.getElementById('catalog-status');
 const catalogGrid=document.querySelector('.catalog-grid');
 const groupOrder=['control','sprinkler','valve','drip','piping'];
-const groupLabels={sprinkler:'噴頭噴嘴',valve:'電磁閥',drip:'滴灌管',control:'智慧控制器',piping:'管材與配件'};
+const groupLabels={sprinkler:'隱藏式噴頭',valve:'電磁閥',drip:'滴灌管',control:'智慧控制器',piping:'管材與配件'};
 const brandRank={rainbird_sprinkler:0,rainbird_valve:0,rainbird_drip:0,sprinkler:1,valve:1,drip:1,toro_sprinkler:2,toro_valve:2,toro_drip:2,control:3,piping:4};
 if(catalogGrid){
  const ordered=[...catalogCards].sort((a,b)=>{
@@ -44,7 +44,7 @@ if(catalogGrid){
  });
 }
 
-const filterNames={all:'全部產品',control:'控制器',sprinkler:'噴頭噴嘴',valve:'電磁閥',drip:'滴灌微噴',piping:'管材配件'};
+const filterNames={all:'全部產品',control:'控制器',sprinkler:'隱藏式噴頭',valve:'電磁閥',drip:'滴灌微噴',piping:'管材配件'};
 filterButtons.forEach(button=>button.addEventListener('click',()=>{
  const filter=button.dataset.filter;
  filterButtons.forEach(item=>{
