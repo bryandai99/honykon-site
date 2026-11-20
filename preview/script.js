@@ -17,7 +17,7 @@ const filterButtons=[...document.querySelectorAll('.filter-btn')];
 const catalogCards=[...document.querySelectorAll('.catalog-card')];
 const catalogStatus=document.getElementById('catalog-status');
 const catalogGrid=document.querySelector('.catalog-grid');
-const groupOrder=['sprinkler','valve','drip','control','piping'];
+const groupOrder=['control','sprinkler','valve','drip','piping'];
 const groupLabels={sprinkler:'噴頭噴嘴',valve:'電磁閥',drip:'滴灌管',control:'智慧控制器',piping:'管材與配件'};
 const brandRank={rainbird_sprinkler:0,rainbird_valve:0,rainbird_drip:0,sprinkler:1,valve:1,drip:1,toro_sprinkler:2,toro_valve:2,toro_drip:2,control:3,piping:4};
 if(catalogGrid){
