@@ -87,8 +87,9 @@
 .eng-image img{object-fit:contain;padding:12px}
 
 
-/* Portfolio photo carousels: three photographs per application, cross-fade every 30 seconds */
+/* Portfolio photo carousels: keep the first photo visible if JavaScript is unavailable */
 .portfolio-image{position:relative;isolation:isolate}
 .portfolio-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;transform:none!important}
-.portfolio-image img.is-active{opacity:1}
+.portfolio-image img:first-child,.portfolio-image img.is-active{opacity:1}
+.portfolio-image img:first-child:not(.is-active)~img.is-active{opacity:1}
 @media(prefers-reduced-motion:reduce){.portfolio-image img{transition:none}}
