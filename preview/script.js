@@ -16,6 +16,34 @@ if(menu&&nav){
 const filterButtons=[...document.querySelectorAll('.filter-btn')];
 const catalogCards=[...document.querySelectorAll('.catalog-card')];
 const catalogStatus=document.getElementById('catalog-status');
+const catalogGrid=document.querySelector('.catalog-grid');
+const groupOrder=['sprinkler','valve','drip','control','piping'];
+const groupLabels={sprinkler:'噴頭噴嘴',valve:'電磁閥',drip:'滴灌管',control:'智慧控制器',piping:'管材與配件'};
+const brandRank={rainbird_sprinkler:0,rainbird_valve:0,rainbird_drip:0,sprinkler:1,valve:1,drip:1,toro_sprinkler:2,toro_valve:2,toro_drip:2,control:3,piping:4};
+if(catalogGrid){
+ const ordered=[...catalogCards].sort((a,b)=>{
+  const groupDiff=groupOrder.indexOf(a.dataset.category)-groupOrder.indexOf(b.dataset.category);
+  if(groupDiff!==0)return groupDiff;
+  return (brandRank[a.dataset.product]??9)-(brandRank[b.dataset.product]??9);
+ });
+ catalogGrid.replaceChildren();
+ let previousGroup='';
+ ordered.forEach((card,index)=>{
+  const group=card.dataset.category;
+  if(group!==previousGroup){
+   const heading=document.createElement('h3');
+   heading.className='catalog-group-title';
+   heading.dataset.groupHeading=group;
+   heading.textContent=groupLabels[group]||group;
+   catalogGrid.appendChild(heading);
+   previousGroup=group;
+  }
+  const indexLabel=card.querySelector('.catalog-top>span');
+  if(indexLabel)indexLabel.textContent=String(index+1).padStart(2,'0')+' / '+group.toUpperCase();
+  catalogGrid.appendChild(card);
+ });
+}
+
 const filterNames={all:'全部產品',control:'控制器',sprinkler:'噴頭噴嘴',valve:'電磁閥',drip:'滴灌微噴',piping:'管材配件'};
 filterButtons.forEach(button=>button.addEventListener('click',()=>{
  const filter=button.dataset.filter;
@@ -29,6 +57,9 @@ filterButtons.forEach(button=>button.addEventListener('click',()=>{
   const show=filter==='all'||card.dataset.category===filter;
   card.hidden=!show;
   if(show)visible++;
+ });
+ document.querySelectorAll('[data-group-heading]').forEach(heading=>{
+  heading.hidden=filter!=='all'&&heading.dataset.groupHeading!==filter;
  });
  if(catalogStatus)catalogStatus.textContent='目前顯示「'+filterNames[filter]+'」：'+visible+' 項';
 }));
