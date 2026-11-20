@@ -174,9 +174,11 @@ if(modal){
 /* Independent portfolio photo carousels: rotate each 3-photo group every 30 seconds */
 document.querySelectorAll('.portfolio-image[data-carousel]').forEach(gallery=>{
  const slides=[...gallery.querySelectorAll('img')];
- if(slides.length<2)return;
+ if(!slides.length)return;
  let current=0;
  slides.forEach((slide,index)=>slide.classList.toggle('is-active',index===0));
+ gallery.classList.add('is-ready');
+ if(slides.length<2||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  window.setInterval(()=>{
   slides[current].classList.remove('is-active');
   current=(current+1)%slides.length;
