@@ -93,11 +93,11 @@ if(form){
 /* Product specification detail dialogs: figures are taken from manufacturer sources */
 const productDetails={
  control:{
-  brand:"YARDIAN",name:"Yardian 智慧灌溉控制器",model:"Yardian（原始系列；非 Yardian Pro）",
-  intro:"以手機 App／網頁管理灌溉分區的智慧控制器。此卡片照片對應 Yardian 原始系列，請勿與 Yardian Pro 規格混用。",
-  specs:[["控制分區","8 區、12 區版本"],["電源輸入","100–240 VAC，50–60 Hz"],["閥門輸出","24 VAC，最大 750 mA"],["網路連線","2.4 GHz Wi-Fi，802.11 b/g/n"],["雨感器","支援常開（NO）／常閉（NC）設定"],["外殼設計","防水設計，可室內／室外使用"],["尺寸","約 200 × 200 × 70 mm"],["保固","原廠標示 2 年有限保固"]],
-  note:"原廠頁面規格。採購前仍須確認實際供應版本、電源配件、區數與台灣供貨狀況。",
-  url:"https://www.yardian.com/products/yardian/",source:"Yardian 官方產品規格"
+  brand:"YARDIAN",name:"Yardian Pro 智慧灌溉控制器",model:"Yardian Pro（8 區／12 區版本）",
+  intro:"智慧型多分區灌溉控制器，支援 Wi-Fi 與 RJ45 乙太網路連線，可接雨水感知器及脈衝式流量感測器；控制器本體亦可直接掃描閥門狀態及啟動分區，不必完全依賴手機或網路。",
+  specs:[["控制分區","8 區／12 區版本；具浪湧、過電流及短路保護"],["機身操作","Select／Run-Stop 按鍵；可掃描分區狀態及執行即時灌溉"],["網路連線","內建 2.4 GHz Wi-Fi（802.11 b/g/n）；RJ45 乙太網路埠"],["USB 介面","USB 埠，可用於 USB 韌體更新等功能"],["閥門／泵浦","專用主閥／泵浦端子；24 VAC 輸出，最大 1 A"],["感測器輸入","雙感測器端子，支援 NO／NC 雨水感知器及脈衝式流量感測器"],["接線規格","14–22 AWG"],["控制器供電","需使用隨附電源供應器；輸入 36 VDC、1.66 A"],["電源供應器","輸入 100–240 VAC、50–60 Hz；輸出 36 VDC、1.66 A"],["外型尺寸","約 150 × 150 × 35 mm（6 × 6 × 1.38 吋）"],["重量","約 0.45 kg（1 lb）"],["工作溫度","−30°C 至 60°C"],["安裝環境","室內使用；可另購戶外防水外殼"],["智慧家庭整合","支援 Apple HomeKit、Amazon Alexa、Google Assistant、Home Assistant 及 IFTTT"],["保固","原廠標示 2 年有限保固"]],
+  note:"本項目已改為 Yardian Pro 系列，不再使用舊款 Yardian（內建攝影機）資料。控制器本體必須搭配隨附 36 VDC 電源供應器；24 VAC 為閥門控制輸出，不是控制器輸入電源。室外安裝需另購原廠戶外防水外殼。區數與端子配置請依實際 8 區／12 區型號確認。",
+  url:"https://www.yardian.com/products/yardian-pro-smart-sprinkler-controller/",source:"Yardian Pro 官方產品頁及技術規格表"
  },
  hunter_miniclik:{
   brand:"HUNTER",name:"Hunter Mini-Clik 雨水感知器",model:"MINI-CLIK（有線型）",
