@@ -44,11 +44,12 @@ if(catalogGrid){
  });
 }
 
-const filterNames={all:'全部產品',control:'控制器',sprinkler:'隱藏式噴頭',valve:'電磁閥',drip:'滴灌微噴',piping:'管材配件'};
-filterButtons.forEach(button=>button.addEventListener('click',()=>{
- const filter=button.dataset.filter;
+const filterNames={all:'全部產品',control:'智慧控制器',sprinkler:'隱藏式噴頭',valve:'電磁閥',drip:'滴灌管',piping:'管材配件'};
+const applyCatalogFilter=(filter)=>{
+ const selectedButton=filterButtons.find(button=>button.dataset.filter===filter);
+ if(!selectedButton)return;
  filterButtons.forEach(item=>{
-  const active=item===button;
+  const active=item===selectedButton;
   item.classList.toggle('active',active);
   item.setAttribute('aria-pressed',String(active));
  });
@@ -62,7 +63,18 @@ filterButtons.forEach(button=>button.addEventListener('click',()=>{
   heading.hidden=filter!=='all'&&heading.dataset.groupHeading!==filter;
  });
  if(catalogStatus)catalogStatus.textContent='目前顯示「'+filterNames[filter]+'」：'+visible+' 項';
-}));
+};
+filterButtons.forEach(button=>button.addEventListener('click',()=>applyCatalogFilter(button.dataset.filter)));
+
+/* Mobile: show one product category at a time; desktop keeps the full catalogue */
+const mobileCatalogQuery=window.matchMedia('(max-width:700px)');
+const syncCatalogLayout=()=>applyCatalogFilter(mobileCatalogQuery.matches?'control':'all');
+syncCatalogLayout();
+if(mobileCatalogQuery.addEventListener){
+ mobileCatalogQuery.addEventListener('change',syncCatalogLayout);
+}else if(mobileCatalogQuery.addListener){
+ mobileCatalogQuery.addListener(syncCatalogLayout);
+}
 
 /* Contextual inquiry: product links select product inquiry; project links select engineering inquiry */
 document.querySelectorAll('[data-inquiry]').forEach(link=>link.addEventListener('click',()=>{
