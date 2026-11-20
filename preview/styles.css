@@ -76,3 +76,8 @@
 .product-detail-source{margin-top:18px;font-size:11px;color:#71816f}
 .product-detail-source a{color:#547642;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){.product-dialog-content{padding:32px 20px}.product-dialog-content h2{font-size:22px}.product-spec-table{font-size:11px}.product-spec-table th,.product-spec-table td{padding:10px 8px}.catalog-card[role="button"]::after{margin:0 15px 15px}}
+
+/* Catalogue grouped by product type; manufacturer order within each group */
+.catalog-group-title{grid-column:1/-1;margin:22px 0 0;padding:0 0 11px;border-bottom:2px solid #dce6d9;color:var(--forest);font-size:19px;font-weight:800;letter-spacing:.04em}
+.catalog-group-title:first-child{margin-top:0}
+.catalog-group-title[hidden]{display:none}
