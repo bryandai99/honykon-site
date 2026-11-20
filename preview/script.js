@@ -99,6 +99,13 @@ const productDetails={
   note:"原廠頁面規格。採購前仍須確認實際供應版本、電源配件、區數與台灣供貨狀況。",
   url:"https://www.yardian.com/products/yardian/",source:"Yardian 官方產品規格"
  },
+ hunter_miniclik:{
+  brand:"HUNTER",name:"Hunter Mini-Clik 雨水感知器",model:"MINI-CLIK（有線型）",
+  intro:"有線式雨水感知器，降雨達到設定門檻時中斷自動灌溉控制器的排程；雨水感知器乾燥復位後，控制器恢復正常排程。適用於支援常開／常閉雨感輸入的灌溉控制器。",
+  specs:[["感測設定範圍","約 3–19 mm（1/8–3/4 吋）降雨量可調"],["感測／控制方式","雨量感測後以開關接點中斷灌溉控制"],["接線","有線型，附約 7.5 m、雙芯 UL 認證電纜"],["開關額定","24 VAC，3 A（Hunter 產品頁列示）"],["相容性","支援常開（NO）或常閉（NC）雨感輸入的多數灌溉控制器"],["安裝","附鋁合金安裝支架；可另選排水溝固定配件"],["保固","原廠標示 5 年"]],
+  note:"本卡採用 MINI-CLIK 有線型作為雨水感知器代表型號。Hunter 另有 WM-CLIK 無線型；有線／無線版本的配件與規格不同，採購前須確認控制器端子及現場佈線。產品照片來源：Hunter Industries（Photo courtesy of Hunter Industries）。",
+  url:"https://www.hunterirrigation.com/irrigation-product/sensors/mini-clikr-sensor",source:"Hunter Mini-Clik 官方產品頁及規格"
+ },
  yiu_a113w:{
   brand:"育材 YIU TSAY",name:"WiFi 澆水定時器",model:"A113W（電池版／插電版／太陽能充電款）",
   intro:"水龍頭式自動澆水定時器，內部以球閥控制水路；可使用手機 App 設定澆水排程，也保留機身旋鈕操作。此產品是水龍頭端球閥定時器，並非 24 VAC 多區電磁閥控制器。",
@@ -126,6 +133,13 @@ const productDetails={
   specs:[["管徑","16 mm"],["滴頭流量","1.4、2.2 或 3.8 L/h（依型號）"],["滴頭間距","30 或 50 cm（依型號）"],["工作壓力範圍","1.0–3.5 bar"],["過濾需求","最低 120 mesh（約 125 μm）"],["產品特性","壓力補償滴頭；CV 型具止回／防排空功能"],["常見型號編碼","PLD-22／PLD-38，搭配間距與捲長選項"],["保固","原廠標示 5 年"]],
   note:"以上依 Hunter PLD 16 mm 型錄資料整理。不同年份／地區型錄的流量與間距選項可能不同，訂貨前請依實際料號核對。",
   url:"https://www.hunterindustries.com/sites/default/files/Hunter_Catalog_EM.pdf",source:"Hunter 官方產品型錄（PLD 16 mm）"
+ },
+ lianfu_lingen_6in:{
+  brand:"良福企業",name:"6 吋林根不銹鋼濾水管",model:"6 吋標準型（V 型線捲線式）",
+  intro:"林根 V 型線捲線式濾水管，主要用於深水井、環保觀測井、溫泉井及開挖降水工程。此品項為濾水管／集水管，不是灌溉系統常用的砂石或網式過濾器。",
+  specs:[["公稱口徑","6 吋標準型"],["圓條直徑／數量","4.5 mm／28 條"],["梯線尺寸","寬 2.5 mm × 高 3.5 mm"],["管內徑","148.0 mm"],["管總長／有效長度","400 cm／388 cm"],["接頭長度","上端 120 mm；下端 60 mm"],["接頭固定環","40 mm"],["接頭外徑／厚度","165.2 mm／4.5 mm"],["材質說明","良福網站列有林根不銹鋼濾水管工程實績；本規格表未逐項標示鋼種，SUS304 等級須依報價及材質證明確認"]],
+  note:"以上尺寸取自良福企業 6 吋標準型材料規格。網站亦列有 8 吋、10 吋及其他尺寸；實際開口率、線距與出水量需依設計條件另行核算。用途為井用濾水／集水，不應誤認為灌溉管線的 6 吋過濾器。",
+  url:"https://www.lianfu-tw.com/tech03.php",source:"良福企業－林根濾水管材料規格"
  },
  piping:{
   brand:"TORO",name:"Toro Pro-Loc Tape Coupling 滴灌帶直通接頭",model:"FTC800",
