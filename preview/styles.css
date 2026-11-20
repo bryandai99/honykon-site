@@ -48,3 +48,9 @@
 .filter-btn{border-radius:2px}
 .contact input:focus-visible,.contact select:focus-visible,.contact textarea:focus-visible{outline:2px solid #789b60;outline-offset:1px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Real manufacturer product photos in catalogue cards */
+.catalog-top{position:relative;overflow:hidden}
+.catalog-top .catalog-photo{position:absolute;inset:13px 20px 9px;width:calc(100% - 40px);height:calc(100% - 22px);object-fit:contain;z-index:0}
+.catalog-top>span{position:relative;z-index:1;background:#ffffffd9;padding:5px 7px}
+@media(max-width:700px){.catalog-top .catalog-photo{inset:10px 12px 7px;width:calc(100% - 24px);height:calc(100% - 17px)}}
