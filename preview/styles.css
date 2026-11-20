@@ -81,3 +81,7 @@
 .catalog-group-title{grid-column:1/-1;margin:22px 0 0;padding:0 0 11px;border-bottom:2px solid #dce6d9;color:var(--forest);font-size:19px;font-weight:800;letter-spacing:.04em}
 .catalog-group-title:first-child{margin-top:0}
 .catalog-group-title[hidden]{display:none}
+
+/* Show the full sprinkler CAD drawing without cropping */
+.eng-image{background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.eng-image img{object-fit:contain;padding:12px}
