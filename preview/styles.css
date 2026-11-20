@@ -54,3 +54,25 @@
 .catalog-top .catalog-photo{position:absolute;inset:13px 20px 9px;width:calc(100% - 40px);height:calc(100% - 22px);object-fit:contain;z-index:0}
 .catalog-top>span{position:relative;z-index:1;background:#ffffffd9;padding:5px 7px}
 @media(max-width:700px){.catalog-top .catalog-photo{inset:10px 12px 7px;width:calc(100% - 24px);height:calc(100% - 17px)}}
+
+/* Clickable product cards and specification detail dialog */
+.catalog-card[role="button"]{cursor:pointer}
+.catalog-card[role="button"]:focus-visible{outline:3px solid #91ad6d;outline-offset:4px}
+.catalog-card[role="button"]::after{content:"點擊查看產品規格　↗";display:block;margin:0 22px 19px;padding-top:11px;border-top:1px solid #e5ebe3;color:#6c884f;font-size:11px;font-weight:800}
+.product-modal[hidden]{display:none}
+.product-modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:22px}
+.product-modal-backdrop{position:absolute;inset:0;background:#071c16c9;backdrop-filter:blur(4px)}
+.product-dialog{position:relative;width:min(760px,100%);max-height:min(88vh,850px);overflow:auto;background:#fff;box-shadow:0 25px 80px #0004}
+.product-modal-close{position:sticky;top:10px;float:right;margin:10px 10px -48px 0;z-index:2;width:38px;height:38px;border:1px solid #dce5dc;background:#fff;color:#234638;font-size:26px;cursor:pointer}
+.product-dialog-content{padding:42px}
+.product-detail-kicker{font-size:10px;letter-spacing:1.7px;color:#82966c;font-weight:800;margin-bottom:9px}
+.product-dialog-content h2{font-size:27px;color:var(--forest);margin:0 48px 8px 0}
+.product-detail-sub{font-size:12px;line-height:1.8;color:var(--muted);margin:0 0 23px}
+.product-spec-table{width:100%;border-collapse:collapse;margin:15px 0 22px;font-size:12px}
+.product-spec-table th,.product-spec-table td{text-align:left;padding:12px 13px;border-bottom:1px solid #e3eae1;vertical-align:top}
+.product-spec-table th{width:30%;font-weight:600;color:#728274;background:#f5f7f3}
+.product-spec-table td{color:#344b3d}
+.product-detail-note{background:#f1f5ef;padding:14px 16px;color:#68796b;font-size:11px;line-height:1.9}
+.product-detail-source{margin-top:18px;font-size:11px;color:#71816f}
+.product-detail-source a{color:#547642;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.product-dialog-content{padding:32px 20px}.product-dialog-content h2{font-size:22px}.product-spec-table{font-size:11px}.product-spec-table th,.product-spec-table td{padding:10px 8px}.catalog-card[role="button"]::after{margin:0 15px 15px}}
