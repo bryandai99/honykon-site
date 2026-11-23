@@ -2,7 +2,7 @@
 const menu=document.querySelector('.menu');
 const nav=document.querySelector('.nav nav');
 if(menu&&nav){
- const closeMenu=()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';};
+ const closeMenu=()=>{nav.classList.remove('open');nav.querySelectorAll('.nav-dropdown').forEach(item=>{item.open=false;});menu.setAttribute('aria-expanded','false');menu.textContent='☰';};
  menu.addEventListener('click',()=>{
   const opened=nav.classList.toggle('open');
   menu.setAttribute('aria-expanded',String(opened));
