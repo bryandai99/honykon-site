@@ -154,3 +154,9 @@
  .line-float{display:inline-flex;position:fixed;right:16px;bottom:18px;z-index:25;align-items:center;justify-content:center;padding:12px 17px;border-radius:999px;background:#06c755;color:#fff;font-size:12px;font-weight:800;box-shadow:0 5px 18px #0003}
 }
 @media(max-width:390px){.line-contact-card{align-items:flex-start}.line-qr-link{flex-basis:104px;width:104px;height:104px}}
+
+
+/* Main navigation refinement: direct engineering anchor and unified inquiry CTA */
+.nav nav .nav-cta{padding:11px 17px;border:1px solid transparent;line-height:1.2;white-space:nowrap}
+.nav nav .nav-cta:hover{background:#c4dc9d;color:#183329!important;transform:translateY(-2px)}
+@media(max-width:700px){.nav nav .nav-cta{align-self:flex-start;margin:10px 0 0;padding:12px 17px;border:1px solid transparent}}
