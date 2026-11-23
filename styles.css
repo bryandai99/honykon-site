@@ -105,3 +105,32 @@
 
 /* SEO topic links in footer */
 .seo-topic-links{display:flex;flex-wrap:wrap;gap:8px 18px;padding:14px 0 24px;border-top:1px solid #e1e8df;font-size:11px;color:#6c7d70}.seo-topic-links a{color:#547642;text-decoration:none}.seo-topic-links a:hover{text-decoration:underline}@media(max-width:700px){.seo-topic-links{padding:14px 18px 22px;gap:10px 14px}}
+
+
+/* Visible entry points for the five SEO topic pages */
+.nav-dropdown{position:relative;color:#45564b;font-size:12px;font-weight:600}
+.nav-dropdown>summary{list-style:none;cursor:pointer;white-space:nowrap}
+.nav-dropdown>summary::-webkit-details-marker{display:none}
+.nav-dropdown>summary:hover,.nav-dropdown[open]>summary{color:#7a984f}
+.nav-dropdown>summary span{font-size:11px;margin-left:3px}
+.nav-submenu{position:absolute;top:calc(100% + 18px);left:-16px;z-index:30;display:grid;min-width:245px;padding:8px 0;background:#fff;border:1px solid #e3eae1;box-shadow:0 14px 30px #102d261a}
+.nav-submenu a{display:block;padding:11px 16px;color:#45564b;font-size:11px;font-weight:600;white-space:nowrap}
+.nav-submenu a:hover{background:#f1f5ef;color:var(--forest)}
+.knowledge{background:#f4f6f1}
+.knowledge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.knowledge-card{display:flex;flex-direction:column;min-height:190px;padding:23px 22px;background:#fff;border:1px solid #e0e7df;transition:transform .2s,box-shadow .2s}
+.knowledge-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px #193d2d12}
+.knowledge-card>span{font-size:9px;letter-spacing:1.3px;font-weight:800;color:#83996a}
+.knowledge-card h3{font-size:16px;line-height:1.6;color:var(--forest);margin:13px 0 7px}
+.knowledge-card p{font-size:11px;line-height:1.9;color:var(--muted);margin:0 0 18px}
+.knowledge-card>b{margin-top:auto;font-size:10px;color:#6c884f}
+.knowledge-card:focus-visible{outline:3px solid #9bbd72;outline-offset:3px}
+@media(max-width:900px){.nav-dropdown{font-size:10px}.knowledge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+ .nav-dropdown{width:100%;font-size:12px}
+ .nav-dropdown>summary{display:block;padding:13px 10px;border-bottom:1px solid #edf0eb}
+ .nav-submenu{position:static;min-width:0;padding:3px 0 8px 12px;border:0;border-bottom:1px solid #edf0eb;box-shadow:none;background:#f8faf7}
+ .nav-submenu a{padding:11px 12px;font-size:11px;white-space:normal;border-bottom:1px solid #edf0eb}
+ .knowledge-grid{grid-template-columns:1fr}
+ .knowledge-card{min-height:0;padding:21px}
+}
