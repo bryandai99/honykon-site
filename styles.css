@@ -215,3 +215,9 @@
  .line-contact-copy b{font-size:13px}
  .line-contact-copy p{font-size:10px}
 }
+
+
+/* Header contact CTA: match the outlined secondary-button treatment on the light navigation bar. */
+.nav nav > a.nav-cta{background:transparent!important;color:var(--forest)!important;border:1px solid var(--forest)!important;box-shadow:none;padding:15px 21px}
+.nav nav > a.nav-cta:hover{background:var(--forest)!important;color:#fff!important;border-color:var(--forest)!important;transform:translateY(-2px)}
+@media(max-width:700px){.nav nav > a.nav-cta{background:transparent!important;color:var(--forest)!important;border:1px solid var(--forest)!important}.nav nav > a.nav-cta:hover{background:var(--forest)!important;color:#fff!important}}
