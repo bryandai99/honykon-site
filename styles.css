@@ -221,3 +221,41 @@
 .nav nav > a.nav-cta{background:transparent!important;color:var(--forest)!important;border:1px solid var(--forest)!important;box-shadow:none;padding:15px 21px}
 .nav nav > a.nav-cta:hover{background:var(--forest)!important;color:#fff!important;border-color:var(--forest)!important;transform:translateY(-2px)}
 @media(max-width:700px){.nav nav > a.nav-cta{background:transparent!important;color:var(--forest)!important;border:1px solid var(--forest)!important}.nav nav > a.nav-cta:hover{background:var(--forest)!important;color:#fff!important}}
+
+/* Header theme: dark navigation with the same outlined white CTA as the hero button. */
+.header{
+ background:var(--deep)!important;
+ border-bottom:1px solid #ffffff24!important;
+}
+.logo{color:#fff!important}
+.logo small{color:#c5d4ca!important}
+.nav nav{color:#e1eae3!important}
+.nav nav>a:not(.nav-cta){color:#e1eae3!important}
+.nav nav>a:not(.nav-cta):hover{color:var(--leaf)!important}
+.nav nav>a.nav-cta{
+ background:transparent!important;
+ color:#fff!important;
+ border:1px solid #ffffff88!important;
+ box-shadow:none!important;
+}
+.nav nav>a.nav-cta:hover{
+ background:#ffffff20!important;
+ color:#fff!important;
+ border-color:#fff!important;
+ transform:translateY(-2px);
+}
+.menu{color:#fff!important}
+@media(max-width:700px){
+ .nav nav{
+  background:var(--deep)!important;
+  box-shadow:0 12px 20px #102d2633!important;
+ }
+ .nav nav>a:not(.nav-cta){color:#e1eae3!important}
+ .nav nav>a.nav-cta{
+  align-self:flex-start;
+  background:transparent!important;
+  color:#fff!important;
+  border:1px solid #ffffff88!important;
+ }
+ .nav nav>a.nav-cta:hover{background:#ffffff20!important;color:#fff!important;border-color:#fff!important}
+}
