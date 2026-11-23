@@ -39,7 +39,7 @@ if(catalogGrid){
    previousGroup=group;
   }
   const indexLabel=card.querySelector('.catalog-top>span');
-  if(indexLabel)indexLabel.textContent=String(index+1).padStart(2,'0')+' / '+group.toUpperCase();
+  if(indexLabel)indexLabel.textContent=group.toUpperCase();
   catalogGrid.appendChild(card);
  });
 }
