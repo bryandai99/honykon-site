@@ -239,7 +239,7 @@
  box-shadow:none!important;
 }
 .nav nav>a.nav-cta:hover{
- background:#ffffff20!important;
+ background:transparent!important;
  color:#fff!important;
  border-color:#fff!important;
  transform:translateY(-2px);
