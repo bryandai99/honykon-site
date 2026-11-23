@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.honykon.com.tw/</loc>
-  </url>
+  <url><loc>https://www.honykon.com.tw/</loc></url>
+  <url><loc>https://www.honykon.com.tw/services/automatic-irrigation/</loc></url>
+  <url><loc>https://www.honykon.com.tw/services/drip-irrigation/</loc></url>
+  <url><loc>https://www.honykon.com.tw/products/irrigation-equipment/</loc></url>
+  <url><loc>https://www.honykon.com.tw/services/irrigation-design-hydraulic-calculation/</loc></url>
+  <url><loc>https://www.honykon.com.tw/projects/irrigation-applications/</loc></url>
 </urlset>

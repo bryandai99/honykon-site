@@ -102,3 +102,6 @@
  .catalog-status{margin:-5px 0 14px;}
  .catalog-group-title[hidden],.catalog-card[hidden]{display:none!important;}
 }
+
+/* SEO topic links in footer */
+.seo-topic-links{display:flex;flex-wrap:wrap;gap:8px 18px;padding:14px 0 24px;border-top:1px solid #e1e8df;font-size:11px;color:#6c7d70}.seo-topic-links a{color:#547642;text-decoration:none}.seo-topic-links a:hover{text-decoration:underline}@media(max-width:700px){.seo-topic-links{padding:14px 18px 22px;gap:10px 14px}}
