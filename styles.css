@@ -134,3 +134,23 @@
  
  
 }
+
+/* LINE contact: personal add-friend link and QR code */
+.line-id-link{display:inline-block;font-weight:700;color:#06a653!important;text-decoration:underline;text-underline-offset:3px}
+.line-contact-card{display:flex;align-items:center;gap:22px;margin-top:28px;padding:22px;background:#fff;border:1px solid #dfe8df}
+.line-qr-link{display:block;flex:0 0 180px;width:180px;height:180px;padding:8px;border:1px solid #e7ece6;background:#fff}
+.line-qr-link img{display:block;width:100%;height:100%;object-fit:contain}
+.line-contact-copy b{display:block;color:var(--forest);font-size:17px}
+.line-contact-copy p{font-size:12px;line-height:1.9;color:var(--muted);margin:8px 0 16px}
+.line-add-btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;background:#06c755;color:#fff;font-size:12px;font-weight:800}
+.line-add-btn:hover,.line-float:hover{background:#05b34c}
+.line-float{display:none}
+@media(max-width:700px){
+ .line-contact-card{gap:14px;padding:14px;align-items:center}
+ .line-qr-link{flex-basis:118px;width:118px;height:118px;padding:5px}
+ .line-contact-copy b{font-size:15px}
+ .line-contact-copy p{font-size:11px;margin:6px 0 10px}
+ .line-add-btn{padding:10px 12px;font-size:11px}
+ .line-float{display:inline-flex;position:fixed;right:16px;bottom:18px;z-index:25;align-items:center;justify-content:center;padding:12px 17px;border-radius:999px;background:#06c755;color:#fff;font-size:12px;font-weight:800;box-shadow:0 5px 18px #0003}
+}
+@media(max-width:390px){.line-contact-card{align-items:flex-start}.line-qr-link{flex-basis:104px;width:104px;height:104px}}
