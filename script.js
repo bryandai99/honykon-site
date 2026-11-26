@@ -64,11 +64,22 @@ const applyCatalogFilter=(filter)=>{
  });
  if(catalogStatus)catalogStatus.textContent='目前顯示「'+filterNames[filter]+'」：'+visible+' 項';
 };
-filterButtons.forEach(button=>button.addEventListener('click',()=>applyCatalogFilter(button.dataset.filter)));
+/* Pick a random starting category, then rotate through all five categories every 30 seconds. */
+let currentCategoryIndex=Math.floor(Math.random()*groupOrder.length);
+const showRotatingCategory=()=>applyCatalogFilter(groupOrder[currentCategoryIndex]);
 
-/* Randomly show one product category on every page load; 全部產品 restores the full catalogue. */
-const initialCategory=groupOrder[Math.floor(Math.random()*groupOrder.length)];
-applyCatalogFilter(initialCategory);
+filterButtons.forEach(button=>button.addEventListener('click',()=>{
+ const selectedFilter=button.dataset.filter;
+ applyCatalogFilter(selectedFilter);
+ const selectedIndex=groupOrder.indexOf(selectedFilter);
+ if(selectedIndex>=0)currentCategoryIndex=selectedIndex;
+}));
+
+showRotatingCategory();
+window.setInterval(()=>{
+ currentCategoryIndex=(currentCategoryIndex+1)%groupOrder.length;
+ showRotatingCategory();
+},30000);
 
 /* Inquiry form removed; contact is handled through phone, email and LINE. */
 
