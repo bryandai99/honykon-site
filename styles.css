@@ -377,3 +377,50 @@
 @media(max-width:700px){
  .nav nav>a.nav-link{font-size:14px!important}
 }
+
+
+/* WHAT WE DO: editorial two-column composition with a clear type hierarchy. */
+.intro{padding:88px 0 92px}
+.intro-grid{
+ display:grid;
+ grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+ column-gap:clamp(42px,7vw,92px);
+ row-gap:26px;
+ align-items:center;
+}
+.intro-grid .intro-kicker{
+ grid-column:1/-1;
+ margin:0;
+ padding-bottom:14px;
+ border-bottom:1px solid #d9e2d7;
+ font-size:11px;
+ letter-spacing:2.4px;
+}
+.intro-grid .intro-title{
+ grid-column:1;
+ max-width:540px;
+ margin:0;
+ color:var(--forest);
+ font-size:clamp(30px,3.2vw,40px);
+ line-height:1.5;
+ letter-spacing:-.7px;
+ font-weight:700;
+}
+.intro-grid .intro-copy{
+ grid-column:2;
+ max-width:570px;
+ margin:0;
+ padding-left:26px;
+ border-left:2px solid #a9c77b;
+ color:#58685e;
+ font-size:15px;
+ line-height:2.15;
+ letter-spacing:.1px;
+}
+@media(max-width:700px){
+ .intro{padding:58px 0 62px}
+ .intro-grid{display:grid;grid-template-columns:1fr;row-gap:18px}
+ .intro-grid .intro-kicker{grid-column:1;padding-bottom:12px;margin-bottom:2px;font-size:10px}
+ .intro-grid .intro-title{grid-column:1;max-width:100%;font-size:27px;line-height:1.55;letter-spacing:-.4px}
+ .intro-grid .intro-copy{grid-column:1;max-width:100%;padding:0 0 0 15px;border-left:2px solid #a9c77b;font-size:13px;line-height:2}
+}
