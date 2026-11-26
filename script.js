@@ -76,31 +76,7 @@ if(mobileCatalogQuery.addEventListener){
  mobileCatalogQuery.addListener(syncCatalogLayout);
 }
 
-/* Contextual inquiry: product links select product inquiry; project links select engineering inquiry */
-document.querySelectorAll('[data-inquiry]').forEach(link=>link.addEventListener('click',()=>{
- const field=document.querySelector('#inquiry textarea[name="需求內容"]');
- const type=document.querySelector('#inquiry select[name="需求類型"]');
- const isEngineering=link.closest('.portfolio-card')!==null||link.closest('.services')!==null;
- if(type)type.value=isEngineering?'灌溉工程／系統規劃':'產品採購／規格詢價';
- if(field){
-  const item='詢問項目：'+link.dataset.inquiry;
-  if(!field.value.includes(item))field.value=item+'\n'+field.value;
- }
-}));
-
-/* Mailto form: keep data local and let the visitor review before sending */
-const form=document.getElementById('inquiry');
-if(form){
- form.addEventListener('submit',e=>{
-  e.preventDefault();
-  if(!form.reportValidity())return;
-  const data=new FormData(form);
-  const subject=encodeURIComponent('[滙凱網站詢價] '+data.get('需求類型'));
-  const body=encodeURIComponent([...data.entries()].map(([key,value])=>key+'：'+value).join('\n'));
-  const mailto='mailto:sales.honykon@msa.hinet.net?subject='+subject+'&body='+body;
-  window.location.href=mailto;
- });
-}
+/* Inquiry form removed; contact is handled through phone, email and LINE. */
 
 /* Product specification detail dialogs: figures are taken from manufacturer sources */
 const productDetails={
