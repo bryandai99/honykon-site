@@ -64,43 +64,24 @@ const applyCatalogFilter=(filter)=>{
  });
  if(catalogStatus)catalogStatus.textContent='目前顯示「'+filterNames[filter]+'」：'+visible+' 項';
 };
-filterButtons.forEach(button=>button.addEventListener('click',()=>applyCatalogFilter(button.dataset.filter)));
+/* Pick a random starting category, then rotate through all five categories every 30 seconds. */
+let currentCategoryIndex=Math.floor(Math.random()*groupOrder.length);
+const showRotatingCategory=()=>applyCatalogFilter(groupOrder[currentCategoryIndex]);
 
-/* Mobile: show one product category at a time; desktop keeps the full catalogue */
-const mobileCatalogQuery=window.matchMedia('(max-width:700px)');
-const syncCatalogLayout=()=>applyCatalogFilter(mobileCatalogQuery.matches?'control':'all');
-syncCatalogLayout();
-if(mobileCatalogQuery.addEventListener){
- mobileCatalogQuery.addEventListener('change',syncCatalogLayout);
-}else if(mobileCatalogQuery.addListener){
- mobileCatalogQuery.addListener(syncCatalogLayout);
-}
-
-/* Contextual inquiry: product links select product inquiry; project links select engineering inquiry */
-document.querySelectorAll('[data-inquiry]').forEach(link=>link.addEventListener('click',()=>{
- const field=document.querySelector('#inquiry textarea[name="需求內容"]');
- const type=document.querySelector('#inquiry select[name="需求類型"]');
- const isEngineering=link.closest('.portfolio-card')!==null||link.closest('.services')!==null;
- if(type)type.value=isEngineering?'灌溉工程／系統規劃':'產品採購／規格詢價';
- if(field){
-  const item='詢問項目：'+link.dataset.inquiry;
-  if(!field.value.includes(item))field.value=item+'\n'+field.value;
- }
+filterButtons.forEach(button=>button.addEventListener('click',()=>{
+ const selectedFilter=button.dataset.filter;
+ applyCatalogFilter(selectedFilter);
+ const selectedIndex=groupOrder.indexOf(selectedFilter);
+ if(selectedIndex>=0)currentCategoryIndex=selectedIndex;
 }));
 
-/* Mailto form: keep data local and let the visitor review before sending */
-const form=document.getElementById('inquiry');
-if(form){
- form.addEventListener('submit',e=>{
-  e.preventDefault();
-  if(!form.reportValidity())return;
-  const data=new FormData(form);
-  const subject=encodeURIComponent('[滙凱網站詢價] '+data.get('需求類型'));
-  const body=encodeURIComponent([...data.entries()].map(([key,value])=>key+'：'+value).join('\n'));
-  const mailto='mailto:sales.honykon@msa.hinet.net?subject='+subject+'&body='+body;
-  window.location.href=mailto;
- });
-}
+showRotatingCategory();
+window.setInterval(()=>{
+ currentCategoryIndex=(currentCategoryIndex+1)%groupOrder.length;
+ showRotatingCategory();
+},30000);
+
+/* Inquiry form removed; contact is handled through phone, email and LINE. */
 
 /* Product specification detail dialogs: figures are taken from manufacturer sources */
 const productDetails={
