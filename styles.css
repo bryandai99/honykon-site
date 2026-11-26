@@ -379,19 +379,19 @@
 }
 
 
-/* WHAT WE DO: editorial two-column composition with a clear type hierarchy. */
-.intro{padding:88px 0 92px}
+/* WHAT WE DO: desktop two-column layout, simplified mobile typography. */
+.intro{padding:80px 0 84px}
 .intro-grid{
  display:grid;
  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
- column-gap:clamp(42px,7vw,92px);
- row-gap:26px;
+ column-gap:clamp(30px,5.5vw,76px);
+ row-gap:24px;
  align-items:center;
 }
 .intro-grid .intro-kicker{
  grid-column:1/-1;
  margin:0;
- padding-bottom:14px;
+ padding-bottom:13px;
  border-bottom:1px solid #d9e2d7;
  font-size:11px;
  letter-spacing:2.4px;
@@ -399,58 +399,65 @@
 .intro-grid .intro-title{
  grid-column:1;
  max-width:540px;
+ min-width:0;
  margin:0;
  color:var(--forest);
- font-size:clamp(30px,3.2vw,40px);
+ font-size:clamp(29px,3vw,38px);
  line-height:1.5;
- letter-spacing:-.7px;
+ letter-spacing:-.4px;
  font-weight:700;
+ writing-mode:horizontal-tb;
+ white-space:normal;
+ overflow-wrap:break-word;
 }
 .intro-grid .intro-copy{
  grid-column:2;
  max-width:570px;
+ min-width:0;
  margin:0;
- padding-left:26px;
+ padding-left:24px;
  border-left:2px solid #a9c77b;
  color:#58685e;
- font-size:15px;
- line-height:2.15;
- letter-spacing:.1px;
+ font-size:14px;
+ line-height:2.05;
+ letter-spacing:0;
 }
 @media(max-width:700px){
- .intro{padding:58px 0 62px}
- .intro-grid{display:grid;grid-template-columns:1fr;row-gap:18px}
- .intro-grid .intro-kicker{grid-column:1;padding-bottom:12px;margin-bottom:2px;font-size:10px}
- .intro-grid .intro-title{grid-column:1;max-width:100%;font-size:27px;line-height:1.55;letter-spacing:-.4px}
- .intro-grid .intro-copy{grid-column:1;max-width:100%;padding:0 0 0 15px;border-left:2px solid #a9c77b;font-size:13px;line-height:2}
-}
-
-
-/* WHAT WE DO title: keep the two intended lines stable on narrow screens. */
-.intro-grid .intro-title{
- display:block;
- width:100%;
- min-width:0;
- writing-mode:horizontal-tb;
-}
-.intro-grid .intro-title span{
- display:block;
- max-width:100%;
- white-space:nowrap;
- word-break:keep-all;
- overflow-wrap:normal;
-}
-@media(max-width:700px){
- .intro-grid .intro-title{
-  width:100%;
-  max-width:100%;
-  font-size:clamp(19px,6.15vw,25px)!important;
-  line-height:1.65!important;
-  letter-spacing:0!important;
+ .intro{padding:48px 0 52px}
+ .intro-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  column-gap:0;
+  row-gap:15px;
  }
-}
-@media(max-width:350px){
+ .intro-grid .intro-kicker{
+  grid-column:1;
+  margin:0 0 2px;
+  padding-bottom:11px;
+  font-size:10px;
+  letter-spacing:2px;
+ }
  .intro-grid .intro-title{
-  font-size:18px!important;
+  grid-column:1;
+  width:auto;
+  max-width:100%;
+  margin:0;
+  font-size:clamp(22px,6.1vw,25px);
+  line-height:1.55;
+  letter-spacing:0;
+  font-weight:700;
+  white-space:normal;
+  overflow-wrap:break-word;
+  word-break:normal;
+ }
+ .intro-grid .intro-copy{
+  grid-column:1;
+  max-width:100%;
+  margin:0;
+  padding:0 0 0 14px;
+  border-left:2px solid #a9c77b;
+  font-size:13px;
+  line-height:1.9;
+  letter-spacing:0;
  }
 }
