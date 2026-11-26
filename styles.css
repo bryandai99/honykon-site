@@ -301,3 +301,69 @@
 /* Contact heading is now a single sentence; use a readable editorial scale. */
 .contact-heading h2{max-width:1000px;font-size:23px;line-height:1.85;font-weight:600}
 @media(max-width:700px){.contact-heading h2{font-size:19px;line-height:1.8}}
+
+
+/* Unified header navigation buttons: identical dimensions, border and interaction. */
+.nav nav{gap:10px!important}
+.nav nav>a.nav-link{
+ display:inline-flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ flex:0 0 112px!important;
+ width:112px!important;
+ min-height:42px!important;
+ padding:10px 12px!important;
+ border:1px solid #ffffff66!important;
+ border-radius:2px!important;
+ background:transparent!important;
+ color:#e1eae3!important;
+ box-shadow:none!important;
+ font-size:12px!important;
+ font-weight:600!important;
+ line-height:1.2!important;
+ text-align:center!important;
+ text-decoration:none!important;
+ white-space:nowrap!important;
+ transform:none!important;
+ transition:background .18s ease,color .18s ease,border-color .18s ease!important;
+}
+.nav nav>a.nav-link:hover{
+ background:var(--leaf)!important;
+ color:var(--deep)!important;
+ border-color:var(--leaf)!important;
+ transform:translateY(-1px)!important;
+}
+.nav nav>a.nav-link:focus-visible{
+ outline:2px solid var(--leaf)!important;
+ outline-offset:3px!important;
+}
+@media(max-width:900px) and (min-width:701px){
+ .nav nav{gap:8px!important}
+ .nav nav>a.nav-link{
+  flex-basis:100px!important;
+  width:100px!important;
+  font-size:11px!important;
+ }
+}
+@media(max-width:700px){
+ .nav nav{gap:8px!important;align-items:stretch!important}
+ .nav nav>a.nav-link{
+  display:flex!important;
+  flex:0 0 auto!important;
+  width:100%!important;
+  min-height:44px!important;
+  padding:12px 14px!important;
+  border:1px solid #ffffff66!important;
+  border-radius:2px!important;
+  background:transparent!important;
+  color:#e1eae3!important;
+  font-size:12px!important;
+  text-align:center!important;
+ }
+ .nav nav>a.nav-link:hover{
+  background:var(--leaf)!important;
+  color:var(--deep)!important;
+  border-color:var(--leaf)!important;
+  transform:none!important;
+ }
+}
