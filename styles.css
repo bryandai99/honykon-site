@@ -424,3 +424,33 @@
  .intro-grid .intro-title{grid-column:1;max-width:100%;font-size:27px;line-height:1.55;letter-spacing:-.4px}
  .intro-grid .intro-copy{grid-column:1;max-width:100%;padding:0 0 0 15px;border-left:2px solid #a9c77b;font-size:13px;line-height:2}
 }
+
+
+/* WHAT WE DO title: keep the two intended lines stable on narrow screens. */
+.intro-grid .intro-title{
+ display:block;
+ width:100%;
+ min-width:0;
+ writing-mode:horizontal-tb;
+}
+.intro-grid .intro-title span{
+ display:block;
+ max-width:100%;
+ white-space:nowrap;
+ word-break:keep-all;
+ overflow-wrap:normal;
+}
+@media(max-width:700px){
+ .intro-grid .intro-title{
+  width:100%;
+  max-width:100%;
+  font-size:clamp(19px,6.15vw,25px)!important;
+  line-height:1.65!important;
+  letter-spacing:0!important;
+ }
+}
+@media(max-width:350px){
+ .intro-grid .intro-title{
+  font-size:18px!important;
+ }
+}
