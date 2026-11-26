@@ -379,7 +379,7 @@
 }
 
 
-/* WHAT WE DO: desktop editorial layout and a purpose-built mobile stack. */
+/* WHAT WE DO: desktop editorial layout; mobile uses a simple full-width block flow. */
 .intro{padding:80px 0 84px}
 .intro-grid{
  display:grid;
@@ -390,9 +390,6 @@
 }
 .intro-grid .intro-kicker{
  grid-column:1/-1;
- display:flex;
- align-items:center;
- gap:18px;
  margin:0;
  padding:0 0 13px;
  border-bottom:1px solid #d9e2d7;
@@ -411,7 +408,6 @@
  font-weight:700;
  writing-mode:horizontal-tb;
  white-space:normal;
- overflow-wrap:break-word;
 }
 .intro-grid .intro-copy{
  grid-column:2;
@@ -423,75 +419,74 @@
  color:#58685e;
  font-size:14px;
  line-height:2.05;
- letter-spacing:0;
 }
 @media(max-width:700px){
  .intro{
+  display:block;
+  width:100%;
   padding:42px 0 46px;
  }
- .intro-grid{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  gap:0;
-  align-items:start;
- }
- .intro-grid .intro-kicker{
-  grid-column:1;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin:0 0 17px;
+ .intro .intro-grid{
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+  min-width:0 !important;
+  margin:0 auto !important;
   padding:0;
-  border:0;
-  font-size:10px;
-  line-height:1.4;
-  letter-spacing:2px;
  }
- .intro-grid .intro-kicker::after{
-  content:"";
-  display:block;
-  flex:1;
-  height:1px;
-  background:#d9e2d7;
+ .intro .intro-grid > .intro-kicker,
+ .intro .intro-grid > .intro-title,
+ .intro .intro-grid > .intro-copy{
+  display:block !important;
+  float:none !important;
+  position:static !important;
+  width:100% !important;
+  min-width:0 !important;
+  max-width:none !important;
+  grid-column:auto !important;
+  writing-mode:horizontal-tb !important;
+  text-orientation:mixed !important;
+  transform:none !important;
+  box-sizing:border-box !important;
  }
- .intro-grid .intro-title{
-  grid-column:1;
-  width:100%;
-  max-width:100%;
-  margin:0 0 16px;
-  padding:0;
+ .intro .intro-grid > .intro-kicker{
+  margin:0 0 18px !important;
+  padding:0 0 11px !important;
+  border:0 !important;
+  border-bottom:1px solid #d9e2d7 !important;
+  color:#789452;
+  font-size:10px !important;
+  line-height:1.4 !important;
+  letter-spacing:2px !important;
+  white-space:normal !important;
+ }
+ .intro .intro-grid > .intro-title{
+  margin:0 0 17px !important;
+  padding:0 !important;
   color:var(--forest);
-  font-size:clamp(21px,6.4vw,25px);
-  line-height:1.55;
-  letter-spacing:0;
-  font-weight:700;
-  text-align:left;
-  white-space:normal;
-  word-break:normal;
-  overflow-wrap:normal;
+  font-size:24px !important;
+  line-height:1.55 !important;
+  letter-spacing:0 !important;
+  font-weight:700 !important;
+  text-align:left !important;
+  white-space:normal !important;
+  word-break:keep-all !important;
+  overflow-wrap:normal !important;
  }
- .intro-grid .intro-title br{
-  display:block;
+ .intro .intro-grid > .intro-title br{
+  display:block !important;
  }
- .intro-grid .intro-copy{
-  grid-column:1;
-  width:100%;
-  max-width:100%;
-  margin:0;
-  padding:13px 0 0;
-  border:0;
-  border-top:1px solid #d9e2d7;
+ .intro .intro-grid > .intro-copy{
+  margin:0 !important;
+  padding:14px 0 0 !important;
+  border:0 !important;
+  border-top:1px solid #d9e2d7 !important;
   color:#58685e;
-  font-size:13px;
-  line-height:1.9;
-  letter-spacing:0;
- }
-}
-@media(max-width:360px){
- .intro-grid .intro-title{
-  font-size:21px;
- }
- .intro-grid .intro-copy{
-  font-size:12.5px;
+  font-size:13px !important;
+  line-height:1.9 !important;
+  letter-spacing:0 !important;
+  white-space:normal !important;
+  word-break:normal !important;
+  overflow-wrap:anywhere !important;
  }
 }
