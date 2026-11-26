@@ -40,12 +40,15 @@
 </script>
 <meta name="theme-color" content="#153b30">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+<link rel="preload" as="image" href="assets/images/hero/hero-1408.webp" imagesrcset="assets/images/hero/hero-960.webp 960w, assets/images/hero/hero-1408.webp 1408w" imagesizes="(max-width:760px) 1082px, 100vw" fetchpriority="high">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap"></noscript>
 </head>
 <body>
 <header class="header"><div class="wrap nav"><a class="logo" href="#home"><img class="company-logo" src="./honykon_logo.png" alt="滙凱實業 HONY KON Logo"><span><b>滙凱實業</b><small>HONY KON INTERNATIONAL</small></span></a><button class="menu" aria-label="開啟選單" aria-expanded="false">☰</button><nav><a class="nav-link" href="#products">產品中心</a><a class="nav-link" href="#engineering">工程服務</a><a class="nav-link" href="#projects">場景應用</a><a class="nav-link" href="#contact">聯絡／詢價 ↗</a></nav></div></header>
 <main id="home">
-<section class="hero"><div class="hero-bg"></div><div class="hero-overlay"></div><div class="wrap hero-inner"><p class="eyebrow">IRRIGATION EQUIPMENT · ENGINEERING SOLUTIONS</p><h1>專業灌溉設備供應<br><em>與工程整合服務</em></h1><p class="hero-copy">從國際品牌設備選型，到自動噴灌配置、CAD 圖面與水力計算，<br class="wide">以完整系統思維，協助每一個場域建立可靠的灌溉方案。</p><div class="actions"><a class="btn primary" href="#products">瀏覽產品中心 <span>→</span></a><a class="btn ghost" href="#engineering">了解工程服務</a></div><div class="hero-foot">SYSTEM DESIGN　/　PRODUCT SUPPLY　/　TECHNICAL SUPPORT</div></div></section>
+<section class="hero"><img class="hero-bg" src="assets/images/hero/hero-1408.webp" srcset="assets/images/hero/hero-960.webp 960w, assets/images/hero/hero-1408.webp 1408w" sizes="(max-width:760px) 1082px, 100vw" width="1408" height="768" alt="" fetchpriority="high" decoding="async"><div class="hero-overlay"></div><div class="wrap hero-inner"><p class="eyebrow">IRRIGATION EQUIPMENT · ENGINEERING SOLUTIONS</p><h1>專業灌溉設備供應<br><em>與工程整合服務</em></h1><p class="hero-copy">從國際品牌設備選型，到自動噴灌配置、CAD 圖面與水力計算，<br class="wide">以完整系統思維，協助每一個場域建立可靠的灌溉方案。</p><div class="actions"><a class="btn primary" href="#products">瀏覽產品中心 <span>→</span></a><a class="btn ghost" href="#engineering">了解工程服務</a></div><div class="hero-foot">SYSTEM DESIGN　/　PRODUCT SUPPLY　/　TECHNICAL SUPPORT</div></div></section>
 <section class="intro"><div class="wrap intro-grid"><p class="eyebrow intro-kicker">WHAT WE DO</p><h2 class="intro-title">設備供應與工程服務，<br>以系統需求為核心。</h2><p class="intro-copy">灌溉系統不只是設備的組合，更需要考量水源條件、流量、壓力、管路配置與現場環境。滙凱從產品供應到工程技術支援，協助客戶把需求轉化為可執行的系統方案。</p></div></section>
 <section class="section" id="products"><div class="wrap"><div class="heading"><div><p class="eyebrow">PRODUCT PORTFOLIO</p><h2>灌溉設備產品型錄</h2></div><p>依照場域、流量、壓力與控制需求，<br class="wide">選擇合適的設備與系統零組件。</p></div><div class="catalog-toolbar" role="group" aria-label="產品分類篩選">
 <button class="filter-btn" data-filter="control" type="button" aria-pressed="false">智慧控制器</button>
@@ -83,12 +86,12 @@
 </div></div></div></section>
 <section class="section projects" id="projects"><div class="wrap"><div class="heading"><div><p class="eyebrow">PROJECT APPLICATIONS</p><h2>灌溉工程應用情境</h2></div><p>依照場域特性、植物需求與維護條件，<br class="wide">規劃適合的灌溉方式。</p></div><div class="portfolio-grid">
 <article class="portfolio-card"><div class="portfolio-image" data-carousel="landscape">
-<img src="./assets/images/irrigation/960px-Irrigation_sprinkler_at_a_Parisian_lawn.webp" alt="巴黎草坪地埋式噴灌系統運作" loading="eager">
+<img src="./assets/images/irrigation/960px-Irrigation_sprinkler_at_a_Parisian_lawn.webp" alt="巴黎草坪地埋式噴灌系統運作" loading="lazy">
 <img src="./assets/images/irrigation/960px-2003-09-28_Lawn_sprinklers_at_NCSSM.webp" alt="校園草坪多組噴灌設備運作" loading="lazy">
 <img src="./assets/images/irrigation/960px-Irrigation_sprinkler_in_Noshiro_City.webp" alt="日本農村草地噴灌設備" loading="lazy">
 </div><div class="portfolio-content"><div class="portfolio-kicker">LANDSCAPE IRRIGATION</div><h3>景觀庭園與建築中庭灌溉</h3><p>針對草坪、植栽區及建築周邊綠地，依場地邊界、植物配置與水源條件，評估噴頭位置、灌溉分區及管路配置。</p><div class="portfolio-details"><div><b>規劃重點</b><span>噴頭配置・覆蓋範圍・分區控制</span></div><div><b>可提供技術</b><span>CAD 配置圖・流量與壓力檢核</span></div></div></div></article>
 <article class="portfolio-card"><div class="portfolio-image" data-carousel="greenhouse">
-<img src="./assets/images/irrigation/960px-Irrigation_in_a_Greenhouse.webp" alt="商業溫室內部灌溉設施" loading="eager">
+<img src="./assets/images/irrigation/960px-Irrigation_in_a_Greenhouse.webp" alt="商業溫室內部灌溉設施" loading="lazy">
 <img src="./assets/images/irrigation/960px-Irrigation_in_a_Greenhouse_-_49244305942.webp" alt="溫室作物灌溉配置" loading="lazy">
 <img src="./assets/images/irrigation/960px-Irrigation_in_a_Greenhouse_-_49244090796.webp" alt="溫室內部灌溉與栽培環境" loading="lazy">
 </div><div class="portfolio-content"><div class="portfolio-kicker">GREENHOUSE & AGRICULTURE</div><h3>溫室、網室與農業灌溉</h3><p>依種植型態、作物需求與場域條件，評估滴灌、微噴及供水分區，兼顧末端出水需求與系統操作管理。</p><div class="portfolio-details"><div><b>規劃重點</b><span>滴灌／微噴選型・分區供水</span></div><div><b>可提供技術</b><span>管徑評估・水力計算・設備整合</span></div></div></div></article>
