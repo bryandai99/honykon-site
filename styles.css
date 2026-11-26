@@ -367,3 +367,13 @@
   transform:none!important;
  }
 }
+
+
+/* Slightly larger, consistent typography for all four header navigation buttons. */
+.nav nav>a.nav-link{font-size:14px!important}
+@media(max-width:900px) and (min-width:701px){
+ .nav nav>a.nav-link{font-size:12px!important}
+}
+@media(max-width:700px){
+ .nav nav>a.nav-link{font-size:14px!important}
+}
