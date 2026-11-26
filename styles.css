@@ -281,3 +281,18 @@
  .line-contact-card{gap:10px;padding:10px}
  .line-qr-link{flex:0 0 84px;width:84px;height:84px}
 }
+
+
+/* Contact section redesign: contact details and LINE, without inquiry form */
+.contact-heading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:38px}
+.contact-heading .eyebrow{margin-bottom:12px}
+.contact-heading h2{font-size:34px;line-height:1.4;color:var(--forest);margin:0}
+.contact-heading .contact-lead{max-width:470px;margin:0 0 4px;font-size:13px;line-height:2;color:var(--muted)}
+.contact-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.85fr);gap:36px;align-items:stretch}
+.contact-layout .details{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px;align-content:start}
+.contact-layout .line-contact-card{grid-column:auto;width:100%;min-width:0;min-height:100%;margin:0;padding:22px;gap:18px;align-self:stretch}
+.contact-layout .line-qr-link{flex:0 0 150px;width:150px;height:150px}
+.contact-layout .line-contact-copy{min-width:0}
+@media(max-width:900px){.contact-layout{grid-template-columns:1fr;gap:24px}.contact-layout .line-contact-card{min-height:0}.contact-layout .line-qr-link{flex-basis:132px;width:132px;height:132px}}
+@media(max-width:700px){.contact-heading{display:block;margin-bottom:26px}.contact-heading h2{font-size:28px}.contact-heading .contact-lead{margin-top:12px;font-size:12px}.contact-layout{gap:22px}.contact-layout .details{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.contact-layout .line-contact-card{padding:14px;gap:12px}.contact-layout .line-qr-link{flex:0 0 96px;width:96px;height:96px;padding:4px}}
+@media(max-width:390px){.contact-layout .details{grid-template-columns:1fr}.contact-layout .line-contact-card{padding:12px}.contact-layout .line-qr-link{flex-basis:84px;width:84px;height:84px}}
