@@ -200,9 +200,21 @@ document.querySelectorAll('.portfolio-image[data-carousel]').forEach(gallery=>{
  slides.forEach((slide,index)=>slide.classList.toggle('is-active',index===0));
  gallery.classList.add('is-ready');
  if(slides.length<2||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const load=slide=>{
+  if(slide.dataset.src){
+   slide.loading='eager';
+   if(slide.dataset.srcset)slide.srcset=slide.dataset.srcset;
+   slide.src=slide.dataset.src;
+   slide.removeAttribute('data-src');slide.removeAttribute('data-srcset');
+  }
+  return slide.decode?slide.decode().catch(()=>{}):Promise.resolve();
+ };
  window.setInterval(()=>{
-  slides[current].classList.remove('is-active');
-  current=(current+1)%slides.length;
-  slides[current].classList.add('is-active');
+  const next=(current+1)%slides.length;
+  load(slides[next]).then(()=>{
+   slides[current].classList.remove('is-active');
+   current=next;
+   slides[current].classList.add('is-active');
+  });
  },30000);
 });

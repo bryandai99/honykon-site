@@ -490,3 +490,5 @@
   overflow-wrap:anywhere !important;
  }
 }
+
+.hero>picture{display:contents}
