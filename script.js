@@ -66,15 +66,9 @@ const applyCatalogFilter=(filter)=>{
 };
 filterButtons.forEach(button=>button.addEventListener('click',()=>applyCatalogFilter(button.dataset.filter)));
 
-/* Mobile: show one product category at a time; desktop keeps the full catalogue */
-const mobileCatalogQuery=window.matchMedia('(max-width:700px)');
-const syncCatalogLayout=()=>applyCatalogFilter(mobileCatalogQuery.matches?'control':'all');
-syncCatalogLayout();
-if(mobileCatalogQuery.addEventListener){
- mobileCatalogQuery.addEventListener('change',syncCatalogLayout);
-}else if(mobileCatalogQuery.addListener){
- mobileCatalogQuery.addListener(syncCatalogLayout);
-}
+/* Randomly show one product category on every page load; 全部產品 restores the full catalogue. */
+const initialCategory=groupOrder[Math.floor(Math.random()*groupOrder.length)];
+applyCatalogFilter(initialCategory);
 
 /* Inquiry form removed; contact is handled through phone, email and LINE. */
 
